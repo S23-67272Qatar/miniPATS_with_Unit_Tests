@@ -22,8 +22,7 @@ class AnimalTest < ActiveSupport::TestCase
     # now run the tests:
     # test the scope 'alphabetical'
     should "shows that animals are listed in alphabetical order" do
-      assert_equal ["Bird", "Cat", "Dog", "Ferret", "Rabbit", "Turtle"], 
-      Animal.alphabetical.map{|a| a.name}
+      assert_equal ["Bird", "Cat", "Dog", "Ferret", "Rabbit", "Turtle"], Animal.alphabetical.map{|a| a.name}
     end
     
     # test the scope 'active'
@@ -35,8 +34,11 @@ class AnimalTest < ActiveSupport::TestCase
     # test the scope 'inactive'
     should "shows that there is one inactive animal" do
       assert_equal 1, Animal.inactive.size
-      # assert_equal ["Alex", "Mark"], Owner.active.alphabetical. map{|o| o.first_name}
+
       assert_equal ["Turtle"], Animal.inactive.map{|a| a.name}.sort
+      # Do not do this, as you are testing both alphabetcial and active in the same time
+      # It is recommended to test each scope separately.
+      # assert_equal ["Turtle"], Animal.active.alphabetical.map{|o| o.name}
     end
 
       # test the callback is working 'capitalize_name'
