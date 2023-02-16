@@ -96,7 +96,8 @@ class PetTest < ActiveSupport::TestCase
   end
     # test the custom validation 'animal_type_treated_by_PATS'
     should "identify a non-PATS animal type as invalid" do
-      # using 'build' instead of 'create' so not added to db; animal will not be in the system (only in memory)
+      # using 'build' instead of 'create' so not added to db; 
+      # animal will not be in the system (only in memory)
       @turtle = FactoryBot.build(:animal, name: "Turtle")
       turtle_pet = FactoryBot.build(:pet, animal: @turtle, owner: @mark, name: "Surfer")
       deny turtle_pet.valid?

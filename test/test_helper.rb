@@ -32,4 +32,5 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :minitest
     with.library :rails
   end
-end
+
+end #end of the class

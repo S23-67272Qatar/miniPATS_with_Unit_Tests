@@ -18,12 +18,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_074709) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "owners", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
